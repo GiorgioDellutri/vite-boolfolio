@@ -1,14 +1,21 @@
 <template lang="">
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row g-5">
                 <div class="col-12">
                     <h2>
                         Posts:
                     </h2>                 
                 </div>
-                <div class="col-6 single-post" v-for="post in posts">
-                    {{post.title}}
+                <div class="row justify-content-around">
+                    <div class="col-6 single-post card mb-3  p-3" v-for="post in posts">
+                        <img src="{{post.cover_image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>
+                            <p class="card-text">{{post.content.substr(0,300)}}...</p>
+                            <a href="#" class="btn btn-primary">Show</a>
+                        </div>  
+                    </div>
                 </div>
             </div>
         </div>
